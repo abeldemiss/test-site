@@ -1,0 +1,44 @@
+/* ==============
+Table of Contents 
+===============*/
+
+/*
+1. Global Styles
+2. Typography
+*/
+
+/*
+=== GLOBAL STYLES ===
+*/
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c79071;
+  min-height: 100vh;
+  font: 16px Work Sans, sans-serif;
+}
+
+nav {
+  overflow: hidden;
+  width: 100%;
+  padding: 70px 70px;
+}
+
+nav li {
+  float: right;
+  text-align: center;
+  list-style-type: none;
+  padding: 20px 20px;
+  font-size: 17px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+.container {
+}
