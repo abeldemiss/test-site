@@ -16,29 +16,56 @@ Table of Contents
 }
 
 body {
-  background-color: #c79071;
+  background-color: #006e4a;
   min-height: 100vh;
-  font: 16px Work Sans, sans-serif;
+  overflow-x: hidden;
+  font-family: work-sans, sans-serif;
+  color: #f2f2f2;
 }
 
 nav {
-  overflow: hidden;
-  width: 100%;
-  padding: 70px 70px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 80px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
 }
 
 nav li {
-  float: right;
   text-align: center;
   list-style-type: none;
   padding: 20px 20px;
-  font-size: 17px;
+  font-size: 25px;
+  float: inline-end;
 }
 
 nav li a {
   text-decoration: none;
+  transition: 0.5s;
+  position: relative;
+  display: block;
+  padding: 4px 0;
   color: #f2f2f2;
 }
 
-.container {
+nav li a::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+
+nav li a:hover {
+  color: #bacdce;
+}
+
+nav li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
