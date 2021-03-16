@@ -10,33 +10,56 @@ Table of Contents
 /*
 === GLOBAL STYLES ===
 */
+@import url("https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap");
+
 * {
   margin: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #006e4a;
+body,
+html {
   min-height: 100vh;
   overflow-x: hidden;
-  font-family: work-sans, sans-serif;
+  font-family: "Victor Mono Medium", monospace;
   color: #f2f2f2;
 }
 
-nav {
+#nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  font-size: 25px;
   padding: 30px 80px;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
+  transition: 0.4s;
+  background-color: black;
+}
+
+.full-name {
+  font-family: "Sawarabi Mincho", sans-serif;
+  font-weight: 900;
+}
+
+.full-name a{
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+.full-name a:hover{
+  cursor: pointer;
+  color: #bacdce;
 }
 
 nav li {
+  display: inline;
+  float: left;
   text-align: center;
   list-style-type: none;
-  padding: 20px 20px;
-  font-size: 25px;
-  float: inline-end;
+  padding: 1rem;
 }
 
 nav li a {
@@ -55,7 +78,7 @@ nav li a::after {
   left: 0;
   width: 100%;
   height: 3px;
-  background: #ffffff;
+  background: rgb(85, 85, 221);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.5s;
@@ -68,4 +91,63 @@ nav li a:hover {
 nav li a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.spacer{
+padding-top: 176px;
+background-color: rgb(85, 85, 221);
+}
+
+.container {
+  background-color: rgb(85, 85, 221);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7em;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+}
+
+.bio {
+  flex: 1 0 auto;
+}
+.prof-pic{
+  flex: 0 1 auto;
+  margin-right: 2em;
+  margin-bottom: 5em;
+}
+
+.prof-pic img {
+  border-radius: 50%;
+}
+
+.bio {
+  font-size: 25px;
+}
+
+/* mobile view*/
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  .about {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 580px) {
+  #nav {
+    padding: 20px 10px !important;
+  }
+
+  nav a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  nav li a {
+    float: none;
+  }
 }
